@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>TypeScript</h2>
+          <img src="./assets/img/typescript-2.svg" width="20%" alt="" />
+        </section>
+        <section>
+          <h2>What is TypeScript?</h2>
+          <ul>
+            <li>TypeScript is a language developed by Microsoft.</li>
+            <li>TypeScript adds additional syntax to JavaScript.</li>
+            <li>
+              TypeScript code converts to JavaScript, which runs anywhere
+              JavaScript runs.
+            </li>
+            <li>TypeScript understands JavaScript.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Advantages of TypeScript:</h2>
+          <ul>
+            <li>
+              Enhances developer productivity: static typing helps catch errors
+              during development.
+            </li>
+            <li>
+              Improves code support: IDEs offer more accurate suggestions and
+              autocompletions thanks to types.
+            </li>
+            <li>
+              Provides scalability: TypeScript makes managing large projects
+              easier due to typing.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>Key Features of TypeScript:</h2>
+            <ul>
+              <li>Static Typing</li>
+              <li>Type Annotations</li>
+              <li>Interfaces</li>
+              <li>Enums</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Static Typing</h3>
+            <pre><code data-trim data-line-numbers>
+            function addNumbers(a: number, b: number): number {
+                return a + b;
+            }
+
+            const result = addNumbers('10', 20);
+            </code></pre>
+            <p>
+              Error: argument of type 'string' is not assignable to parameter of
+              type 'number'.
+            </p>
+          </section>
+          <section>
+            <h3>Type Annotations</h3>
+            <pre><code data-trim data-line-numbers>
+              let name: string = "John";
+              let age: number = 30;
+              let isStudent: boolean = false;
+              let scores: number[] = [90, 85, 78];  
+            </code></pre>
+          </section>
+          <section>
+            <h3>Interfaces</h3>
+            <pre><code data-trim data-line-numbers>
+            interface Person {
+                name: string;
+                age: number;
+                greet(): string;
+            }
+  
+            class Employee implements Person {
+              constructor(public name: string, public age: number) {}
+          
+              greet(): string {
+                  return `Hi, my name is ${this.name}`;
+              }
+          }
+            </code></pre>
+          </section>
+          <section>
+            <h3>Enums</h3>
+            <pre><code data-trim data-line-numbers>
+            enum DaysOfWeek {
+                Monday,
+                Tuesday,
+                Wednesday,
+                Thursday,
+                Friday,
+                Saturday,
+                Sunday,
+            }
+
+            const today: DaysOfWeek = DaysOfWeek.Wednesday;
+            const str = (`Today is ${DaysOfWeek[today]}.`);
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <h2>Applying TypeScript in Frameworks</h2>
+          <ul>
+            <li>React</li>
+            <li>Angular</li>
+            <li>Vue.js</li>
+            <li>Express.js</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Key Reasons to Use TypeScript:</h2>
+          <ul>
+            <li>Static Typing</li>
+            <li>Improved Code Maintainability</li>
+            <li>Enhanced Tooling</li>
+            <li>Better Collaboration</li>
+            <li>Scalability</li>
+            <li>Ecosystem Compatibility</li>
+          </ul>
+        </section>
+        <section>
+          <img
+            src="./assets/img/github-top-10-programming-languages.webp"
+            alt=""
+          />
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
